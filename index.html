@@ -7,16 +7,34 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <title>QUIZ</title>
 </head>
+<div class="container">
 <body>
-    <h1 class="heading">Heading</h1>
-    <div class="game-area"></div>
-    <div class="score-area">
-        <p class="score-area">Correct answers <span id="score">0</span></p>
-        <p class="score-area">Incorrect answers <span id="score">0</span></p>
+    <h1 class="heading">QUIZ</h1>
+
+    <div class="game-area">
+        <div class="score">
+            <span id="user-score">0</span>
+            <span id="total-score">/ 10</span>
+        </div>
+
+        <div class="content" id="question-area">
+            <div id="question-text"></div>
+            <div class="options">
+                <button class="btn btn-option">True</button>
+                <button class="btn btn-option">False</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-restart" id="Restart">Restart</button>
+            <button class="btn btn-prev" id="Prev">Prev</button>
+            <button class="btn btn-next" id="Next">Next</button>
+            <button class="btn btn-submit" id="Submit">Submit</button>
+        </div>
     </div>
     <script src="assets/js/script.js"></script>
-    
 </body>
+</div>
 </html>
