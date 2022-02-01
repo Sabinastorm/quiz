@@ -1,3 +1,4 @@
+// Code from Code ninjas How To Create A JavaScript Quiz Code?:
 const restartBtn = document.getElementById('restart');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
@@ -32,12 +33,56 @@ let questions = [
         ]
     },
     {
-      question: "Which Chess pieces moves first?",
+      question: "Which Chess piece moves first?",
       answers: [
           {option:"White",answer:true},
           {option:"Black",answer:false}
       ]
+    },
+    {
+        question: "How many humps does a camel have?",
+        answers: [
+            {option:"One",answer:false},
+            {option:"Two",answer:true}
+        ]    
+        
+    },
+    {
+        question: "What is Earth's largest continent?",
+        answers: [
+            {option:"Asia",answer:true},
+            {option:"Africa",answer:false}
+        ]
+    },
+    {
+        question: "How many colors are there in the rainbow?",
+        answers: [
+            {option:"Six",answer:false},
+            {option:"Seven",answer:true}
+            ]
+    },
+    {
+        question: "What country is responsible for creating the Olympic Games?",
+        answers: [
+            {option:"Greece",answer:true},
+            {option:"Spain",answer:false}
+        ]
+    },
+    {
+        question: "What's the smallest country in the world?",
+        answers: [
+            {option:"Vatican City",answer:true},
+            {option:"Monaco",answer:false}
+        ]
+    },
+    {
+        question: "What is the loudest animal on Earth?",
+        answers: [
+            {option:"Elephant",answer:false},
+            {option:"Spearm Whale",answer:true}
+        ]
     }
+
 ]
 restartBtn.addEventListener('click',restart);
 prevBtn.addEventListener('click',prev);
@@ -92,7 +137,7 @@ function next(){
     if (currentQuestion === numberOfQuestions) {
       submit();
     }
-    if(currentQuestion>=2){
+    if(currentQuestion>=4){
         nextBtn.classList.add('hide');
         prevBtn.classList.remove('hide');
     }
@@ -127,10 +172,11 @@ function next(){
 }    
 function prev(){
     currentQuestion--;
-    if(currentQustion<=0){
+    if(currentQuestion<=0){
         nextBtn.classList.add('hide');
         prevBtn.classList.remove('hide');
     }
+    
     questionText.innerHTML = questions[currentQuestion].question;
     trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
     trueBtn.onclick = () => {
@@ -166,7 +212,7 @@ function submit(){
     submitBtn.classList.add('hide');
     trueBtn.classList.add('hide');
     falseBtn.classList.add('hide');
-    questionText.innerHTML = "Congratulations!";
+    questionText.innerHTML = "Congratulations!<br><br>Your score is:";
 }
 beginQuiz();
 const numberOfQuestions = questions.length;
